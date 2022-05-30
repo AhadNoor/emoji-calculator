@@ -14,6 +14,33 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <!-- Header -->
+    <header class="align--center pt3">
+        <div>
+            <h1 class="text--gray">Simple emoji calculator app.</h1>
+            <h4>Start your symfony project with codeception test framework.</h4>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Feature list -->
+        <div class="container pt1 mt1 text--gray align--center page-content" id="page-content">
+            {% block pageContent %}
+
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt1 pb1 align--center-on-mobile">
+        <div class="container footer-container">
+            <div class="grid-row footer-content">
+                <div class="grid-column mt2 span-half">
+                    <p class="small">Developed by <a href="https://www.linkedin.com/in/ahadnoor/" class="link link--text">Ahad Noor Alam</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>

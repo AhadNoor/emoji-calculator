@@ -1,0 +1,8 @@
+{% extends app.request.xmlHttpRequest ? 'ajax.html.twig' : 'base.html.twig' %}
+
+{% block title %}
+    {{contentHead}}
+    {% if subHead is defined and subHead is not empty %}
+        | {{ subHead }}
+    {% endif %}
+{% endblock %}

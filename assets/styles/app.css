@@ -1,3 +1,2 @@
-body {
-    background-color: lightgray;
-}
+@import "main.css";
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700";
