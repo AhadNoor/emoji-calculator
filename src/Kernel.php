@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is a part of the simple emoji calculator for symfony learning app.
+ *
+ * Copyright (c) 2022-2023, AHAD NOOR ALAM <https://www.linkedin.com/in/ahadnoor/>
+ */
+
 namespace App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
