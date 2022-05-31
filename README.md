@@ -29,9 +29,9 @@ To check for the application requirements automatically, follow the guideline:
 ## How to run the application on dev environment
 - install composer
 - run `composer install --prefer-dist` to install the dependencies
-- run `bin/console app:install` to prepare the application with pre-loaded data
-- go to the application root folder
-- run `php bin/console server:run` to run the application using Symfony PHP web server
+- run `npm i` to install the dependencies
+- run `npm run build` to  creates a build directory with a production build
+- In next version, we will crete docker compose to run the application using docker and browse
 - to fix folder permissions: https://symfony.com/doc/current/setup/file_permissions.html
 
 
