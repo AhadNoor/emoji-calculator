@@ -548,7 +548,6 @@ canvas, iframe, img, svg, video {
 
 .form-control {
     background-image: none;
-    border: 1px solid transparent;
     border-radius: 7px;
     color: #262b3a;
     display: block;
@@ -978,9 +977,7 @@ canvas, iframe, img, svg, video {
     font-size: .618rem
 }
 
-.h6, .small, h6, small {
-    font-size: .618rem
-}
+
 
 @media screen and (min-width: 40em) {
     .h1, h1 {
@@ -999,13 +996,6 @@ canvas, iframe, img, svg, video {
         font-size: 1rem
     }
 
-    .h5, h5 {
-        font-size: .618rem
-    }
-
-    .h6, .small, h6, small {
-        font-size: .618rem
-    }
 }
 
 h1, h2, h3, h4, h5, h6 {

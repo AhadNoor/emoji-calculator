@@ -8,7 +8,12 @@
 
 namespace App\Controller;
 
+use App\DataMapper\CalculatorDataMapper;
+use App\Form\CalculatorType;
+use App\Manager\CalculatorManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -16,10 +21,25 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index()
+    public function index(Request $request, CalculatorManager $manager)
     {
+        $calculatorRequest = new CalculatorDataMapper();
+        $form = $this->createForm(CalculatorType::class, $calculatorRequest);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $a = $form->getClickedButton()->getName();
+
+            return new JsonResponse(
+                [
+                    'isSuccess' => true,
+                    'result' => $manager->calculate($form->getClickedButton()->getName(), $calculatorRequest->getOperandA(), $calculatorRequest->getOperandB()),
+                ]
+            );
+        }
+
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
+            'form' => $form->createView(),
         ]);
     }
 }

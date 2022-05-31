@@ -3,18 +3,73 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block pageContent %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="calculator-wrapper">
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <div class="card card-custom card-stretch">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h6 class="card-label">
+                            Press icon to calculate.
+                        </h6>
+                    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-5">
+                            <div class="container h-100 card">
+                                <div class="row align-items-center h-100 card-body">
+                                    <div class="jumbotron">
+                                        {{ form_widget(form.operandA) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-5">
+                            <div class=" card h-100">
+                                <div class="card-body p-4">
+                                    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                        {{ form_widget(form.add, {'label':' &#128125;'}) }}
+                                        {{ form_widget(form.subtract, {'label':' &#128128;'}) }}
+                                        {{ form_widget(form.multiply, {'label':'&#128123;'}) }}
+                                        {{ form_widget(form.divide, {'label':'&#128561;'}) }}
+
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-6">
+                                            <h3>Result</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h3 class="lbl-result"></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-5">
+                            <div class="container h-100 card">
+                                <div class="row align-items-center h-100 card-body">
+                                    <div class="jumbotron">
+                                        {{ form_widget(form.operandB) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('landing') }}
 {% endblock %}
