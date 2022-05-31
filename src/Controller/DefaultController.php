@@ -27,8 +27,6 @@ class DefaultController extends AbstractController
         $form = $this->createForm(CalculatorType::class, $calculatorRequest);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $a = $form->getClickedButton()->getName();
-
             return new JsonResponse(
                 [
                     'isSuccess' => true,
