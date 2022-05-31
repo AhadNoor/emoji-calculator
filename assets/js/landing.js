@@ -8,7 +8,7 @@ function onFormSubmit(event, form) {
             $('.lbl-result').text(new Number(data.result).toFixed(2));
         },
         error: function (e) {
-            console.log(e)
+            $('.lbl-result').text('Error!');
         },
         complete: function () {
 

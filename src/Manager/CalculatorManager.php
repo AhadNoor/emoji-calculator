@@ -14,16 +14,16 @@ class CalculatorManager
 {
     public function calculate(string $operator, float $operandA, float $operandB)
     {
-        switch ($operator) {
-            case 'divide' && 0 == $operandB:
+        switch (true) {
+            case $operator == 'divide' && 0 == $operandB:
                 throw new BadRequestHttpException('Divide by 0 is not possible');
-            case 'add':
+            case $operator == 'add':
                 return $operandA + $operandB;
-            case 'subtract':
+            case $operator == 'subtract':
                 return $operandA - $operandB;
-            case 'divide':
+            case $operator == 'divide':
                 return $operandA / $operandB;
-            case 'multiply':
+            case $operator == 'multiply':
                 return $operandA * $operandB;
         }
         throw new BadRequestHttpException('Unexpected error!');

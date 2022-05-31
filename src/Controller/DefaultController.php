@@ -14,6 +14,7 @@ use App\Manager\CalculatorManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -33,6 +34,8 @@ class DefaultController extends AbstractController
                     'result' => $manager->calculate($form->getClickedButton()->getName(), $calculatorRequest->getOperandA(), $calculatorRequest->getOperandB()),
                 ]
             );
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
+            throw new BadRequestHttpException('Unwanted data provided!');
         }
 
         return $this->render('default/index.html.twig', [
