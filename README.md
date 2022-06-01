@@ -31,6 +31,7 @@ To check for the application requirements automatically, follow the guideline:
 - run `composer install --prefer-dist` to install the dependencies
 - run `npm i` to install the dependencies
 - run `npm run build` to  creates a build directory with a production build
+- run php -S localhost:8000 -t public/
 - In next version, we will crete docker compose to run the application using docker and browse
 - to fix folder permissions: https://symfony.com/doc/current/setup/file_permissions.html
 
