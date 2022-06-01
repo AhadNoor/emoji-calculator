@@ -4,7 +4,7 @@ This wiki is for emoji simple calculator. This is intended to develop as playgro
 
 ## Development Stack
 
-- PHP: 7.3 +
+- PHP: 7.4 +
 - Symfony: 4.4
 
 
